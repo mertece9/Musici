@@ -1,0 +1,140 @@
+{
+  "name": "Efsane Music Bot",
+  "description": "Pyrogram ve Py-Tgcalls ile Python'da yazılmış uygun işlevlere sahip bir Telegram Müzik Botu.",
+  "logo": "https://upload.wikimedia.org/wikipedia/commons/c/c3/Python-logo-notext.svg",
+  "keywords": [
+  "python3",
+  "telegram",
+  "bot",
+  "Yukki",
+  "YukkiMusicBot",
+  "telegram-bot",
+  "pyrogram"
+  ],
+  "stack": "container",
+  "env": {
+    "API_ID": {
+      "description": "Bu değeri https://my.telegram.org",
+      "value": "",
+      "required": true
+    },
+    "API_HASH": {
+      "description": "Bu değeri https://my.telegram.org",
+      "value": "",
+      "required": true
+    },
+    "BOT_TOKEN": {
+      "description": "Botfather'dan bir Bot jetonu",
+      "value": "",
+      "required": true
+    },
+    "DURATION_LIMIT": {
+      "description": "Playout için Süre Sınırı (In Mins).. Example: 60",
+      "value": "60",
+      "required": true
+    },
+    "ASSISTANT_PREFIX": {
+      "description": "Yardımcı Komutlar öneki.",
+      "value": ".",
+      "required": true
+    },
+    "MONGO_DB_URI": {
+      "description": "Mongo DB URL",
+      "value": "",
+      "required": true
+    },
+    "MUSIC_BOT_NAME": {
+      "description": "Music Bot'unuz için bir ad.",
+      "value": "",
+      "required": true
+    },
+    "SUPPORT_CHANNEL": {
+      "description": "Varsa Kanal Bağlantısını Destekleyin, Destek yoksa boş bırakın. Bağlantınız https://t.me/",
+      "value": "",
+      "required": false
+    },
+    "SUPPORT_GROUP": {
+      "description": "Varsa Destek Grubu Bağlantısı, Destek yoksa boş bırakın. Bağlantınız https://t.me/",
+      "value": "",
+      "required": false
+    },
+    "OWNER_ID": {
+      "description": "SAHİbİ olarak eklemek istediğiniz kullanıcı(lar)ın kullanıcı kimlikleri. Birden çok değer bir boşlukla ayrıştırılacaktır.",
+      "value": "",
+      "required": true
+    },
+    "STRING_SESSION1": {
+      "description": "Pyrogram Dize Oturumu. Bir Asistan Zorunludur.",
+      "value": "",
+      "required": true
+    },
+    "STRING_SESSION2": {
+      "description": "A Pyrogram String Session. Leave blank if you dont want Multi-Assistant",
+      "value": "",
+      "required": false
+    },
+    "STRING_SESSION3": {
+      "description": "A Pyrogram String Session. Leave blank if you dont want Multi-Assistant",
+      "value": "",
+      "required": false
+    },
+    "STRING_SESSION4": {
+      "description": "A Pyrogram String Session. Leave blank if you dont want Multi-Assistant",
+      "value": "",
+      "required": false
+    },
+    "STRING_SESSION5": {
+      "description": "A Pyrogram String Session. Leave blank if you dont want Multi-Assistant",
+      "value": "",
+      "required": false
+    },
+    "HEROKU_API_KEY": {
+      "description": "Your Heroku account's API key",
+      "value": "",
+      "required": false
+    },
+    "HEROKU_APP_NAME": {
+      "description": "Your heroku app/bot's name",
+      "value": "",
+      "required": false
+    },
+    "LOG_GROUP_ID": {
+      "description": "Günlük Grubu Kimliğinizi ekleyin, botunuzu ekleyin ve tam haklara sahip bir yönetici olarak tanıtın!. Yalnızca Grup'ı kullanın. Lütfen Kanal Kimliği kullanmayın.",
+      "value": "",
+      "required": true
+    },
+    "SUDO_USERS": {
+      "description": "SUDO olarak eklemek istediğiniz kullanıcı(lar)ın kullanıcı kimlikleri. Birden çok değer bir boşlukla ayrıştırılacaktır.",
+      "value": "",
+      "required": true
+    },
+    "UPSTREAM_REPO": {
+      "description": "Eğer bunu bilmiyorsan, olduğu gibi git.",
+      "value": "https://github.com/Mehmetbaba06/maho",
+      "required": true
+    },
+    "UPSTREAM_BRANCH": {
+      "description": "Repo'nun Şube Adı",
+      "value": "master",
+      "required": true
+    }
+  },
+  "buildpacks": [
+        {
+            "url": "heroku/python"
+        },
+        {
+            "url": "heroku/nodejs"
+        },
+        {
+            "url": "https://github.com/jonathanong/heroku-buildpack-ffmpeg-latest.git"
+        }
+    ],
+    "formation": {
+        "worker": {
+            "quantity": 1,
+            "size": "free"
+        }
+    },
+    "stack": "container"
+}
